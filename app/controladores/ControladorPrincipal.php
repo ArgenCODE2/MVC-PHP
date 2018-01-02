@@ -14,8 +14,9 @@ final class ControladorPrincipal extends Controlador {
     	$usu = $_POST["frmLoginUsu"];
         $pass = $_POST["frmLoginClave"]; 
 
+        $scripts = '<script src="web/js/funciones.js"></script>';
     	$template = file_get_contents('web/principal.html');
-        $V = new Inicio($template);
+        $V = new Inicio($template, $scripts);
 
         $M = new ModeloPrincipal();
         $res = $M->login($usu, $pass);
